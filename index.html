@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onyedikachi Ezema — Cloud &amp; DevOps Engineer</title>
+<meta name="description" content="Onyedikachi Emmanuel Ezema — Azure Administrator Associate, Cloud &amp; DevOps Engineer in training. Lagos, Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blueprint: #0E2A47;
+    --blueprint-deep: #0A2038;
+    --grid-line: rgba(224, 236, 248, 0.07);
+    --grid-line-strong: rgba(224, 236, 248, 0.14);
+    --paper: #EDF3FA;
+    --muted: #8FA8C2;
+    --amber: #E8A33D;
+    --amber-dim: rgba(232, 163, 61, 0.35);
+    --divider: rgba(224, 236, 248, 0.16);
+    --max-w: 860px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background-color: var(--blueprint);
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 32px 32px;
+    color: var(--paper);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--amber); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header / Hero ---------- */
+  header.hero{
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .tag{
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 28px;
+  }
+
+  h1{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .role{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+    color: var(--muted);
+    margin: 0 0 28px;
+    font-weight: 500;
+  }
+
+  .summary{
+    max-width: 62ch;
+    color: #C9D9EA;
+    font-size: 1.05rem;
+    margin: 0 0 36px;
+  }
+
+  .links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .links a{ color: var(--paper); }
+  .links a:hover{ color: var(--amber); }
+
+  /* ---------- Sections ---------- */
+  section{
+    padding: 56px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  h2{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 28px;
+    color: var(--paper);
+  }
+
+  h2 .num{
+    color: var(--amber);
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin-right: 12px;
+  }
+
+  /* Focus grid */
+  .focus-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--divider);
+    border: 1px solid var(--divider);
+  }
+  .focus-item{
+    background: var(--blueprint-deep);
+    padding: 22px 20px;
+  }
+  .focus-item h3{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--amber);
+    margin: 0 0 10px;
+    font-weight: 400;
+  }
+  .focus-item p{
+    margin: 0;
+    font-size: 0.95rem;
+    color: #C9D9EA;
+  }
+
+  /* Certifications */
+  .cert-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cert-list li{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--divider);
+    font-size: 0.98rem;
+  }
+  .cert-list li:last-child{ border-bottom: none; }
+  .cert-list .status{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .cert-list .status.done{ color: var(--amber); }
+
+  /* Experience timeline */
+  .timeline{
+    position: relative;
+    padding-left: 36px;
+  }
+  .timeline::before{
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--divider);
+  }
+  .t-item{
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .t-item:last-child{ margin-bottom: 0; }
+  .t-item::before{
+    content: attr(data-n);
+    position: absolute;
+    left: -36px;
+    top: 1px;
+    width: 19px;
+    height: 19px;
+    border: 1px solid var(--amber-dim);
+    border-radius: 50%;
+    background: var(--blueprint);
+    color: var(--amber);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .t-item h3{
+    font-size: 1.02rem;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+  .t-item .meta{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .t-item p{
+    margin: 0;
+    color: #C9D9EA;
+    font-size: 0.95rem;
+    max-width: 60ch;
+  }
+
+  /* Projects (in-progress log) */
+  .projects-note{
+    border: 1px dashed var(--divider);
+    padding: 22px 24px;
+    font-size: 0.95rem;
+    color: #C9D9EA;
+  }
+  .projects-note strong{ color: var(--paper); }
+
+  footer{
+    padding: 40px 0 70px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 560px){
+    header.hero{ padding: 64px 0 44px; }
+    section{ padding: 44px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">LAGOS, NIGERIA · OPEN TO CLOUD / DEVOPS ROLES</span>
+    <h1>Onyedikachi Emmanuel Ezema</h1>
+    <p class="role">Cloud &amp; DevOps Engineer — Azure Administrator Associate</p>
+    <p class="summary">
+      I build and secure cloud infrastructure on Azure, with a background in software
+      development and certified Scrum delivery. Currently deepening my Infrastructure-as-Code,
+      CI/CD, and Kubernetes skills through hands-on projects — this site is deployed
+      on the infrastructure I'm learning to design.
+    </p>
+    <div class="links">
+      <a href="mailto:emmanuelkachiii@gmail.com">emmanuelkachiii@gmail.com</a>
+      <a href="tel:+2348142230727">+234 0814 223 0727</a>
+      <a href="https://www.linkedin.com/in/onyedikachi-ezema-87b43b1b7" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kachi-cmd" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="focus">
+  <div class="wrap">
+    <h2><span class="num">01</span>Focus areas</h2>
+    <div class="focus-grid">
+      <div class="focus-item">
+        <h3>CLOUD PLATFORMS</h3>
+        <p>Microsoft Azure — compute, storage, networking, IAM. AWS fundamentals in progress.</p>
+      </div>
+      <div class="focus-item">
+        <h3>CONTAINERS</h3>
+        <p>Docker, Docker Compose, Kubernetes fundamentals (KCNA-certified).</p>
+      </div>
+      <div class="focus-item">
+        <h3>DEVOPS TOOLING</h3>
+        <p>Azure DevOps, Git, CI/CD pipelines, Infrastructure as Code (in progress).</p>
+      </div>
+      <div class="focus-item">
+        <h3>DELIVERY</h3>
+        <p>Certified Scrum Master — sprint facilitation, backlog management, cross-team coordination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <h2><span class="num">02</span>Certifications</h2>
+    <ul class="cert-list">
+      <li><span>Microsoft Certified: Azure Administrator Associate</span><span class="status done">EARNED</span></li>
+      <li><span>Microsoft Certified: Azure Fundamentals</span><span class="status done">EARNED</span></li>
+      <li><span>KCNA — Kubernetes and Cloud Native Associate</span><span class="status done">EARNED</span></li>
+      <li><span>AWS Certified Cloud Practitioner</span><span class="status">IN PROGRESS</span></li>
+      <li><span>Introduction to Linux (LFS101)</span><span class="status">IN PROGRESS</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2><span class="num">03</span>Experience</h2>
+    <div class="timeline">
+      <div class="t-item" data-n="1">
+        <h3>Solutions Developer &amp; Azure Administrator</h3>
+        <div class="meta">Reliance Infosystems Limited — 01/2021 – 02/2022</div>
+        <p>Deployed and managed Azure compute resources; built application features with React and TypeScript; modeled databases in SQL Server.</p>
+      </div>
+      <div class="t-item" data-n="2">
+        <h3>Scrum Master</h3>
+        <div class="meta">Growth Lab Inc (Prime Lab) — 02/2022 – 04/2022</div>
+        <p>Facilitated sprint delivery for distributed backend and frontend teams across time zones on NFT and Web3 storage projects.</p>
+      </div>
+      <div class="t-item" data-n="3">
+        <h3>Product Manager (Volunteer)</h3>
+        <div class="meta">For-Christ Poly — 06/2022 – 06/2025</div>
+        <p>Directed product strategy for a manufacturing product line, partnering directly with engineering and design teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2><span class="num">04</span>Cloud projects</h2>
+    <div class="projects-note">
+      <strong>This site is Project 1</strong> of a self-directed, project-based path to Cloud
+      Architect / DevOps Engineer — going from manual deployment through CI/CD, containers,
+      Kubernetes, and production-grade infrastructure. Entries with links and write-ups will
+      be added here as each project ships.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>© 2026 Onyedikachi Ezema</span>
+    <span>Deployed on Azure Static Web Apps</span>
+  </div>
+</footer>
+
+</body>
+</html>
