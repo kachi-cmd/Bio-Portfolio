@@ -1,5 +1,5 @@
 ﻿# Bio-Portfolio
-This is where some of my projects and accomplishments will be referenced. Site Link <a href="https://wonderful-hill-094a0e910.2.azurestaticapps.net/"> Visit Example</a>
+This is where some of my projects and accomplishments will be referenced. Site Link <a href="https://wonderful-hill-094a0e910.2.azurestaticapps.net/"> Visit </a>
 <br/>
 <br/>
 Deployed a real resource on the right Azure SKU, and caught my own cost mistake
