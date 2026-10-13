@@ -18,6 +18,7 @@
     --muted: #8FA8C2;
     --amber: #E8A33D;
     --amber-dim: rgba(232, 163, 61, 0.35);
+    --green: #6FCF97;
     --divider: rgba(224, 236, 248, 0.16);
     --max-w: 860px;
   }
@@ -227,14 +228,64 @@
     max-width: 60ch;
   }
 
-  /* Projects (in-progress log) */
+  /* Projects log */
+  .project-card{
+    border: 1px solid var(--divider);
+    padding: 24px 26px;
+    margin-bottom: 18px;
+    background: var(--blueprint-deep);
+  }
+  .project-card:last-child{ margin-bottom: 0; }
+  .project-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-bottom: 10px;
+  }
+  .project-head h3{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--paper);
+  }
+  .project-status{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    border: 1px solid rgba(111, 207, 151, 0.35);
+    padding: 2px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .project-stack{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .project-card p.desc{
+    margin: 0 0 14px;
+    color: #C9D9EA;
+    font-size: 0.95rem;
+    max-width: 64ch;
+  }
+  .project-links{
+    display: flex;
+    gap: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+  }
+
   .projects-note{
     border: 1px dashed var(--divider);
-    padding: 22px 24px;
-    font-size: 0.95rem;
-    color: #C9D9EA;
+    padding: 18px 22px;
+    font-size: 0.92rem;
+    color: #8FA8C2;
+    margin-top: 18px;
   }
-  .projects-note strong{ color: var(--paper); }
 
   footer{
     padding: 40px 0 70px;
@@ -250,6 +301,7 @@
   @media (max-width: 560px){
     header.hero{ padding: 64px 0 44px; }
     section{ padding: 44px 0; }
+    .project-head{ flex-direction: column; }
   }
 </style>
 </head>
@@ -338,11 +390,44 @@
 <section id="projects">
   <div class="wrap">
     <h2><span class="num">04</span>Cloud projects</h2>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3>Project 1 — This Site</h3>
+        <span class="project-status">LIVE</span>
+      </div>
+      <p class="project-stack">Azure Static Web Apps · Managed Identity · Application Insights · Log Analytics</p>
+      <p class="desc">
+        A static site deployed on the least infrastructure needed to serve it — no VM, no VNet.
+        Access is scoped with a least-privilege role assignment on the resource itself, and an
+        Availability Test pings the live URL from multiple regions with an alert rule wired to
+        email, so downtime gets reported rather than discovered.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3>Project 2 — Back-py API</h3>
+        <span class="project-status">LIVE</span>
+      </div>
+      <p class="project-stack">Python · Flask · Azure App Service · GitHub Actions · OIDC</p>
+      <p class="desc">
+        A small Flask JSON API deployed to Azure App Service through a CI/CD pipeline written
+        from scratch — not the portal's auto-generated one. Tests and lint run in a gated
+        <code>test</code> job; <code>deploy</code> only runs if that job passes, proven by
+        deliberately breaking a check and watching deployment get skipped. Authentication from
+        GitHub to Azure uses OpenID Connect via a federated credential, scoped to the
+        <code>main</code> branch of this one repo — no stored client secret, anywhere, ever.
+      </p>
+      <div class="project-links">
+        <a href="https://back-py-adabgsd2h7erggcc.centralus-01.azurewebsites.net" target="_blank" rel="noopener">Live API</a>
+        <a href="https://github.com/kachi-cmd/Back-py" target="_blank" rel="noopener">Source on GitHub</a>
+      </div>
+    </div>
+
     <div class="projects-note">
-      <strong>This site is Project 1</strong> of a self-directed, project-based path to Cloud
-      Architect / DevOps Engineer — going from manual deployment through CI/CD, containers,
-      Kubernetes, and production-grade infrastructure. Entries with links and write-ups will
-      be added here as each project ships.
+      Next up — Tier 3: containerizing an app with Docker and deploying it through the same
+      kind of pipeline discipline. Entries will be added here as each project ships.
     </div>
   </div>
 </section>
